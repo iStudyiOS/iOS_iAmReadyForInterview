@@ -1,10 +1,12 @@
 # Swift
 
 ## Type
-- [collection Type의 종류와 각각의 특징에 대해 말씀해주세요.](https://github.com/iStudyiOS/iOS_iAmReadyForInterview/blob/main/iOS/Swift_Interview_content/CollectionType.md)
+- collection Type의 종류와 각각의 특징에 대해 말씀해주세요.
 - Any와 AnyObject에 대해 설명해주세요.
 - mutating 에 대해서 설명해주세요.
 - swift의 기본타입이 모두 구조체로 구현되어있는데, 왜 이니셜라이저를 생성하지 않고 값으로 생성할 수 있나요?
+- 값타입과
+
 
 ## Protocol
 - Hashable 에 대해 설명해주세요.
