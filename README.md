@@ -34,29 +34,58 @@
 - 필요시 헤더와 같은 마크다운 문법을 사용해서 소주제를 나누셔도 됩니다.
 - 질문은 토글을 사용합니다.
 
-토글 사용법
-```
+#### 토글 사용법
+
+```html
 <details>
 <summary>질문!</summary>
-<div markdown="1">
+<br>
+    - 답!
 
-답!
+    ### 공식문서에 따른 인용구가 있다면
+    > 이것은 인용구 입니다.
 
-</div>
+    ### 예시코드
+    ```swift
+    var ios: String = "너무 재밌다. 하하"
+    ```
 </details>
 ```
 
 <details>
 <summary>질문!</summary>
-<div markdown="1">
-
-답!
-
-</div>
+<br>
+  - 답!
+  
+  ### 공식문서에 따른 인용구가 있다면
+  > 이것은 인용구 입니다.
+  
+  ### 예시코드
+  ```swift
+  var ios: String = "너무 재밌다. 하하"
+  ```
 </details>
+
+#### Commit 규칙
+- 새로운 질문 최초 추가 시
+```
+[ADD] 질문이름
+```
+- 이미 추가한 질문 내용 수정 시
+```
+[UPDATE] 질문이름
+```
+- 해당 질문 삭제 시
+```
+[DEL] 질문이름
+```
+- 삭제된 질문을 재업로드 시
+```
+[RE] 질문이름
+```
 
 <br>
-<hr>
+
 
 ## Link
 
@@ -71,7 +100,7 @@
 ### :seven: [Algorithm](./CS/Algorithm/README.md)
 ### :eight: [iOS](./iOS/iOS/README.md)
 ### :nine: [Swift](./iOS/Swift/README.md)
-### :ten: [Software Engineering](./SoftwareEngineering/README.md)
+### :zero: [Software Engineering](./SoftwareEngineering/README.md)
 
 <br>
 <hr>
