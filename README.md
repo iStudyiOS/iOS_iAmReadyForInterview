@@ -39,6 +39,7 @@
 ```html
 <details>
 <summary>질문!</summary>
+<div markdown="1">
 <br>
     - 답!
 
@@ -49,6 +50,7 @@
     ```swift
     var ios: String = "너무 재밌다. 하하"
     ```
+</div>
 </details>
 ```
 
