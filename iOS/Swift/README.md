@@ -270,3 +270,30 @@
   - 하지만 `associated valu`e가 있는 경우에는 `Hash 메서드`를 구현해주어야 한다.
   
 </details>
+
+<details>
+<summary> cow란 무엇인가요? </summary>
+<div markdown="1">
+<br>
+  
+  ### Copy on Write
+  > 컴퓨터 프로그래밍에서 복사 동작을 할 때, 실제 원본이나 복사본이 수정되기 전까지는 복사를 하지 않고 원본 리소스를 공유함 원본이나 복사본에서 수정이 일어날 경우, 그때 복사하는 작업을 함
+
+  ### 작동 방식
+  대표적으로 Swift에서 Array는 Value 타입이기 때문에, 값 복사가 일어나게 된다. 하지만, cow 때문에 처음에는 같은 메모리를 참조하고 있다가 어느 하나가 수정이 일어나게 되면 복사가 진행된다.
+  
+  ### 사용하는 이유
+  일단 복사를 한다고 해서 꼭 수정이 일어나는 것은 아니다. 따라서, 불필요한 메모리 비용을 줄이기 위해 사용된다.
+
+</div>
+</details>
+
+<details>
+<summary> closure를 이용한 stored property와 computed property의 차이점 </summary>
+<div markdown="1">
+<br>
+  Closure를 이용하여 프로퍼티를 세팅하게 되면 해당 프로퍼티가 처음 호출이 될 때 클로저 안의 코드가 수행되어 프로퍼티의 값이 정해지고, 정해지고 난 후에는 그 값이 계속 쓰인다.
+  Computed property는 해당 변수가 호출이 될 때마다 computed property의 block이 실행되어 값을 반환한다.
+
+</div>
+</details>
