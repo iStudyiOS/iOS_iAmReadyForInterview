@@ -291,7 +291,8 @@
 <details>
   <summary> closure를 이용한 stored property와 computed property의 차이점 </summary>
   <br>
+  
   - Closure를 이용하여 프로퍼티를 세팅하게 되면 해당 프로퍼티가 처음 호출이 될 때 클로저 안의 코드가 수행되어 프로퍼티의 값이 정해지고, 정해지고 난 후에는 그 값이 계속 쓰인다.
   - Computed property는 해당 변수가 호출이 될 때마다 computed property의 block이 실행되어 값을 반환한다.
-
+  
 </details>
