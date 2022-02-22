@@ -270,3 +270,35 @@
   - 하지만 `associated valu`e가 있는 경우에는 `Hash 메서드`를 구현해주어야 한다.
   
 </details>
+
+<details>
+<summary>Enum 과 Struct 는 어떤 차이가 있는지?</summary>
+<div markdown="1">
+<br>
+    - Enum 타입은 열거형 타입으로 연관된 값들의 집합이다. case 하나하나가 하나의 값을 나타내는 타입. 
+    - Struct는 프로퍼티와 메서드로 구성된 타입. enum, struct 모두 class와 다르게 값타입이며, 상속이 불가능하지만 프로토콜 채택은 가능함.
+  
+</div>
+</details>
+
+<details>
+<summary>Int / Int32 / Int64  | UInt / UInt32 / UInt64 각각의 차이는 무엇인지?</summary>
+<div markdown="1">
+<br>
+    - 모두 정수를 나타내는 데이터 타입. 뒤에 붙는 32,64는 타입이 표현할 수 있는 비트의 크기. 
+    - Int는 음수와 0, 양수를 표현할 수 있고, UInt는 양수만 표현할 수 있음. 
+    - 크기가 표시되지 않은 Int, UInt는 해당 프로그램이 컴파일되는 컴퓨터의 시스템 아키텍처를 따른다. 즉, 자신이 사용하는 컴퓨터가 32비트 일 경우, Int의 범위는 -2^16 ~ 2^16 - 1 이고 64비트일 경우 -2^32 ~ 2^32 - 1 이다. 
+    -UInt의 범위가 필요하지 않는 한 Int 사용 권장. 두 타입을 모두 사용하면 서로 다른 타입의 값을 교환할때 자원소모 크기 때문.
+  
+</div>
+</details>
+
+<details>
+<summary>Any 와 AnyObject는 어떤것인지?</summary>
+<div markdown="1">
+<br>
+    - Any는 함수타입을 포함하여 Swift의 모든 데이터 타입을 지칭하는 타입. Int, String 같은 기본 데이터 타입까지 포함. 
+    - AnyObject는 모든 클래스 타입의 인스턴스를 나타내는 프로토콜임 (범위 : Any > AnyObject).
+  
+</div>
+</details>
