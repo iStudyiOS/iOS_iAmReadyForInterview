@@ -37,3 +37,57 @@
 </div>
 </details>
   
+
+<details>
+<summary>Context Switching에 대해 설명해주세요</summary>
+<div markdown="1">
+<br>
+
+- 하나의 프로세스가 CPU를 사용 중인 상태에서 다른 프로세스가 CPU를 사용하도록 하기 위해, 이전의 프로세스 상태를 보관하고 새로운 프로세스의 상태를 적재하는 작업
+- 한 프로세스의 상태는 그 프로세스의 PCB에 기록됨
+
+PCB란?
+- 프로세스 제어 블록(Process Control Block)의 약자로, CPU에 의해 실행 중인 특정한 프로세스를 관리할 필요가 있는 정보를 포함하는 운영 체제 커널의 자료 구조
+
+</div>
+</details>
+
+
+<details>
+<summary>블록, 논블록에 대해 설명해주세요</summary>
+<div markdown="1">
+<br>
+
+[참고자료](https://velog.io/@nittre/%EB%B8%94%EB%A1%9C%ED%82%B9-Vs.-%EB%85%BC%EB%B8%94%EB%A1%9C%ED%82%B9-%EB%8F%99%EA%B8%B0-Vs.-%EB%B9%84%EB%8F%99%EA%B8%B0)
+
+- 블로킹과 논블로킹은 ```제어권``` 이란 단어를, 동기(sync)와 비동기(async)는 ```리턴값```이란 단어를 기억하시면 됩니다.
+
+### 블로킹
+- A가 B를 호출하면, 제어권을 A가 호출한 B에 넘겨준다.
+### 논블로킹
+- A가 B를 호출해도 제어권은 그대로 자신이 가지고 있는다.
+  
+<br>
+
+### 동기(sync)
+- A가 B를 호출한 뒤, B의 리턴값을 계속 확인하면서 신경쓰는 것
+### 비동기(async)
+- A가 B를 호출할 때 콜백 함수를 함께 전달해서, B의 작업이 완료되면 함께 보낸 콜백 함수를 실행한다.
+- A는 B를 호출한 후로 B의 작업 완료 여부에는 신경쓰지 않는다.
+
+
+</div>
+</details>
+
+
+<details>
+<summary>FCFS(First Come First Served)은 무엇인가요?</summary>
+<div markdown="1">
+<br>
+
+- 먼저 온 고객을 먼저 서비스해주는 방식, 즉 먼저 온 순서대로 처리.
+- 비선점형(Non-Preemptive) 스케줄링일단 CPU 를 잡으면 CPU burst 가 완료될 때까지 CPU 를 반환하지 않는다. 할당되었던 CPU 가 반환될 때만 스케줄링이 이루어진다.
+- convoy effect(후위효과), 소요시간이 긴 프로세스가 먼저 도달하여 효율성을 낮추는 현상이 발생한다.
+
+</div>
+</details>
