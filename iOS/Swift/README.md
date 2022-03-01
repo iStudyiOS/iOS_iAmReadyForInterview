@@ -424,3 +424,73 @@ associated value는 동일한 case 내에서 다른 값을 가질 수 있다.
 ```
   
 </detailts>
+
+
+<details>
+  <summary> AppDelegate, SceneDelegate가 각각 어떠한 라이프 사이클을 처리하는지 </summary>
+  <br>
+  
+  - AppDelegate.  앱 실행 및 종료와 관련된 프로세스 라이프 사이클
+  - SceneDelegate.  포그라운드와 백그라운드 상태에 있을 때 상태 전환과 관련된 UI 라이프 사이클
+
+  
+</details>
+  
+
+<details>
+  <summary> 앱의 생명 주기 </summary>
+  <br>
+  
+> 앱 실행 순서
+> 
+
+1. `application(_:didFinishLaunchingWithOptions:)`
+    - 앱이 실행되면 앱을 화면에 보여주기 위한 모든 설정이 끝나고, 실제로 화면에 나타나기 직전에 호출
+
+2. Scene 연결 (앱이 실행되면 UIKit에 Scene을 연결)
+    - `application(_:configurationForConnecting:options:)`
+        - 새로운 Scene을 만들고 UIKit과 연결하기 위한 configuration을 지정
+        - 일반적으로 info.plist에 추가된 기본 값을 사용해서 생성
+    
+    - `scene(_:willConnectTo:options:)`
+        - Scene이 연결된 것임을 delegate에 알려줌
+        - `application(_:didFinishLaunchingWithOptions:)`에서 했던 UIWindow 생성 작업
+
+- `sceneDidBecomeActive(_:)`
+    - 앱이 inactive에서 Active 상태로 전환되었을 때 호출
+
+3. To Background (OffScreen)
+    - 앱 실행 후 홈 화면으로 나갈 때, Active - inactive - Background(Suspended)로 전환
+    - SceneDelegate는 Scene에 다음 순서로 메서드 호출
+        - `sceneWillResignActive(_:)`
+            - Active → Inactive
+        - `sceneDidEnterBackground(_:)`
+            - Background 상태로 전환
+
+4. To Foreground (OnScreen)
+    - Background 상태에 있는 앱을 다시 실행하면 Background - Inactive - Active로 전환
+    - SceneDelegate는 Scene에 다음 순서로 메서드 호출
+        - `sceneWillEnterForeground(_:)`
+            - Background → Inactive
+        - `sceneDidBecomeActive(_:)`
+            - Inactive → Active
+  
+  
+</details>
+  
+  
+
+<details>
+  <summary> [동기(Sync)와 비동기(Async)], [직렬(Serial)과 동시(Concurrent)]의 차이점 </summary>
+  <br>
+  
+    - 동기(Sync)와 비동기(Async)는 메인 쓰레드에서 대기열을 어떤 방식으로 처리할지 정하는 것.
+    - 직렬(Serial)과 동시(Concurrent)는 어떤 대기열을 사용할 지 정하는 것
+  
+</details>
+  
+  
+  
+  
+  
+  
