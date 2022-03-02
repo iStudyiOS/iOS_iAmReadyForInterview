@@ -423,8 +423,7 @@ rawValue의 경우 값이 다르면 다른 case에 해당하지만,
 associated value는 동일한 case 내에서 다른 값을 가질 수 있다.
 ```
   
-</detailts>
-
+</details>
 
 <details>
   <summary> AppDelegate, SceneDelegate가 각각 어떠한 라이프 사이클을 처리하는지 </summary>
@@ -433,9 +432,7 @@ associated value는 동일한 case 내에서 다른 값을 가질 수 있다.
   - AppDelegate.  앱 실행 및 종료와 관련된 프로세스 라이프 사이클
   - SceneDelegate.  포그라운드와 백그라운드 상태에 있을 때 상태 전환과 관련된 UI 라이프 사이클
 
-  
 </details>
-  
 
 <details>
   <summary> 앱의 생명 주기 </summary>
@@ -475,11 +472,8 @@ associated value는 동일한 case 내에서 다른 값을 가질 수 있다.
         - `sceneDidBecomeActive(_:)`
             - Inactive → Active
   
-  
 </details>
   
-  
-
 <details>
   <summary> [동기(Sync)와 비동기(Async)], [직렬(Serial)과 동시(Concurrent)]의 차이점 </summary>
   <br>
@@ -488,9 +482,4 @@ associated value는 동일한 case 내에서 다른 값을 가질 수 있다.
     - 직렬(Serial)과 동시(Concurrent)는 어떤 대기열을 사용할 지 정하는 것
   
 </details>
-  
-  
-  
-  
-  
   
