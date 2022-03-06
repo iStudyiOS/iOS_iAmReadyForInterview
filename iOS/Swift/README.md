@@ -483,3 +483,59 @@ associated value는 동일한 case 내에서 다른 값을 가질 수 있다.
   
 </details>
   
+<details>
+  <summary> 비동기 작업을 취소하는 방법 </summary>
+  <br>
+  
+    - cancel 메서드를 통해 취소가 가능하다.
+  
+</details>
+  
+<details>
+  <summary> Application States </summary>
+  <br>
+  
+1. Not Running
+  - 아예 실행되지 않았거나 앱이 종료된 상태
+
+2. Inactive
+  - 실행중이지만 이벤트를 받지 않는 상태. 예) 알림창 등을 가려진 상태, 잠금 상태
+  
+3. Active
+  - 실행중이고 이벤트를 받는 상태
+  - Active 상태로 들어오려면 Inactive 상태로부터 들어와야 한다
+  
+4. Background
+  - Background에 있고, 코드를 실행중인 상태
+
+5. Suspended
+  - Background에 있지만, 코드를 수행하고 있지 않은 상태
+  - 메모리에는 적재되어 있지만 메모리가 부족한 상황일 때는 앱을 죽이기도 한다.
+  
+</details>
+  
+<details>
+  <summary> race condition을 피할 수 있는 방법 </summary>
+  <br>
+  
+1. NSLock
+  - Critical Section 전후로 NSLock의 lock, unlock 함수르 통해 쓰레드의 접근을 통제할 수 있다. 
+  - 하지만, Deadlock을 유발할 수 있기 때문에 신중히 써야한다.
+  
+2. DispatcheSemaphore
+  - Couting Semaphore의 구현체
+  - 생성자로 넘겨주는 파라미터를 통해 초기 카운트 값을 정할 수 있다
+  - wait와 signal 함수로 접근을 통제할 수 있다
+  - wait를 통해 카운팅 1 감소, signal을 통해 카운팅 1 증가
+  - wait를 호출했을 때 카운팅이 0이었다면, signal 함수가 불릴때까지 대기한다
+  
+3. Dispatch Barrier
+  - Concurrent Queue에서 사용가능하다
+  - .barrier flag를 설정한 코드 블럭은 큐에서 실행되는 유일한 작업임을 표시한다
+  
+4. Serial Queue
+  - Serial Queue로 critical section을 wrapping을 해준다
+  - Serial Queue를 통해 해당 코드가 하나의 쓰레드만 실행하도록 보장해준다
+</details>
+  
+  
