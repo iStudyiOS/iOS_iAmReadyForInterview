@@ -537,5 +537,5 @@ associated value는 동일한 case 내에서 다른 값을 가질 수 있다.
   - Serial Queue로 critical section을 wrapping을 해준다
   - Serial Queue를 통해 해당 코드가 하나의 쓰레드만 실행하도록 보장해준다
 </details>
-  
+
   
