@@ -97,6 +97,32 @@
 </div>
 </details>
 
+<details>
+<summary> Functional Dependency가 무엇인지, Fully Functional Dependency의 조건, Fully Functional Dependency의 이점 </summary>
+<div markdown="1">
+<br>
+  
+  
+> Functional Dependency이란?
+> 
+
+함수와 같이 어떠한 값을 통해 종속 관계에 있는 다른 값을 유일하게 결정할 수 있다는 것입니다. 데이터베이스에서의 함수 종속성을 더욱 명확하게 정의하면 다음과 같습니다.
+
+어떤 테이블 **R**에 존재하는 필드들의 부분집합을 각각 **X**와 **Y**라고 할 때, **X**의 한 값이 **Y**에 속한 오직 하나의 값에만 사상될 경우에 "**Y**는 **X**에 함수 종속 (**Y** is functionally dependent on **X**)"이라고 하며, **X**→**Y**라고 표기합니다.
+
+> Fully Functional Dependency의 조건
+> 
+
+종속자(Dependant)가 기본키에만 종속되며, 기본키가 여러 속성으로 구성되어 있을경우 기본키를 구성하는 모든 속성이 포함된 기본키의 부분집합에 종속된 경우입니다.
+
+> Fully Functional Dependency의 이점
+> 
+
+Data Anomaly를 예방할 수 있습니다.
+  
+</div>
+</details>
+
 
 
 
