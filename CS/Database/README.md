@@ -66,10 +66,75 @@
 </div>
 </details>
 
+<details>
+<summary> ACID는 각각 무엇을 일컫는 단어인가? 각각에 해당하는 설명을 해주세요. </summary>
+<div markdown="1">
+<br>
+  
+  
+> ACID?
+> 
 
+- Atomacity(원자성)
+- Consistency(일관성)
+- Isolation(격리성)
+- Durability(지속성)
 
+> 각 특성에 대한 설명
+> 
+  
+- Atomacity
+    - 트랜잭션의 작업이 부분적으로 실행되거나 중단되지 않는 것을 보장하는 것을 말합니다.
+    - All or Nothing의 개념으로서 작업 단위를 일부분만 실행하지 않는다는 것을 말합니다.
+- Consisteny
+    - 트랜잭션이 성공적으로 완료되면 일관적인 DB 상태를 유지하는 것을 말합니다.
+    - 여기서 말하는 일관성이란, 기본 키, 외래 키 제약과 같은 명시적인 무결성 제약 조건들뿐만 아니라, 대표적인 자금 이체 예에서 두 계좌 잔고의 합은 이체 전후가 같아야 한다는 사항과 같은 비명시적인 일관성 조건들도 있습니다.
+- Isolation
+    - 여러 트랜잭션이 동시에 수행되더라도 각각의 트랜잭션은 다른 트랜잭션의 수행에 영향을 받지 않고 독립적으로 수행되어야 합니다.
+- Durability
+    - 트랜잭션이 성공적으로 완료되어 커밋되고 나면, 해당 트랜잭션에 의한 모든 변경은 향후에 어떤 소프트웨어나 하드웨어 장애가 발생되더라도 보존되어야 합니다.
+  
+</div>
+</details>
 
+<details>
+<summary> Functional Dependency가 무엇인지, Fully Functional Dependency의 조건, Fully Functional Dependency의 이점 </summary>
+<div markdown="1">
+<br>
+  
+  
+> Functional Dependency이란?
+> 
 
+함수와 같이 어떠한 값을 통해 종속 관계에 있는 다른 값을 유일하게 결정할 수 있다는 것입니다. 데이터베이스에서의 함수 종속성을 더욱 명확하게 정의하면 다음과 같습니다.
 
+어떤 테이블 **R**에 존재하는 필드들의 부분집합을 각각 **X**와 **Y**라고 할 때, **X**의 한 값이 **Y**에 속한 오직 하나의 값에만 사상될 경우에 "**Y**는 **X**에 함수 종속 (**Y** is functionally dependent on **X**)"이라고 하며, **X**→**Y**라고 표기합니다.
 
+> Fully Functional Dependency의 조건
+> 
 
+종속자(Dependant)가 기본키에만 종속되며, 기본키가 여러 속성으로 구성되어 있을경우 기본키를 구성하는 모든 속성이 포함된 기본키의 부분집합에 종속된 경우입니다.
+
+> Fully Functional Dependency의 이점
+> 
+
+Data Anomaly를 예방할 수 있습니다.
+  
+</div>
+</details>
+
+<details>
+<summary> Write-Ahead Loggin에 대해서 설명해주세요. </summary>
+<div markdown="1">
+<br>
+
+Write-Ahead Logging은 트랜잭션을 로그에 기입해놓고, 특정 데이터 양이 쌓이면 이를 데이터베이스의 디스크에 Data Block 형태로 쓰게 됩니다.
+디스크에 쌓기 전에 Log에 먼저 기록한다고 해서 Write-Ahead Logging이라 불립니다.
+    
+이 기법이 사용되는 이유는, 디스크에서 데이터를 읽을 때 두 가지 방법(Sequential Access, Random Access)이 있는데 Sequential Access의 방법이 더 빠르기 때문에
+트랜잭션을 Log에 Sequential하게 기록하여 디스크 IO에서 오는 성능 저하를 방지할 수 있게 됩니다.
+    
+더하여, ACID의 네 가지 특성 중 Consistency와 Atomacity도 보장할 수 있게 됩니다.
+  
+</div>
+</details>
