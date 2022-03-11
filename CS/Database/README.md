@@ -123,10 +123,18 @@ Data Anomaly를 예방할 수 있습니다.
 </div>
 </details>
 
+<details>
+<summary> Write-Ahead Loggin에 대해서 설명해주세요. </summary>
+<div markdown="1">
+<br>
 
-
-
-
-
-
-
+Write-Ahead Logging은 트랜잭션을 로그에 기입해놓고, 특정 데이터 양이 쌓이면 이를 데이터베이스의 디스크에 Data Block 형태로 쓰게 됩니다.
+디스크에 쌓기 전에 Log에 먼저 기록한다고 해서 Write-Ahead Logging이라 불립니다.
+    
+이 기법이 사용되는 이유는, 디스크에서 데이터를 읽을 때 두 가지 방법(Sequential Access, Random Access)이 있는데 Sequential Access의 방법이 더 빠르기 때문에
+트랜잭션을 Log에 Sequential하게 기록하여 디스크 IO에서 오는 성능 저하를 방지할 수 있게 됩니다.
+    
+더하여, ACID의 네 가지 특성 중 Consistency와 Atomacity도 보장할 수 있게 됩니다.
+  
+</div>
+</details>
