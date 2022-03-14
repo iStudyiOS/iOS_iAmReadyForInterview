@@ -608,10 +608,10 @@ associated value는 동일한 case 내에서 다른 값을 가질 수 있다.
     ```
     
 
-위의 문제를 해결하기 위해 async-await proposal은 swift의 coroutine 모델을 도입했다.
+위의 문제를 해결하기 위해 `async-await proposal`은 swift의 `coroutine` 모델을 도입했다.
 
 비동기 함수의 semetics를 정의하였으나 동시성을 제공하지는 않는다.
-비동기 함수에서 await으로 흐름을 제어함으로써 동기적인 코드가 작성 가능하다.
+비동기 함수에서 `await`으로 흐름을 제어함으로써 동기적인 코드가 작성 가능하다.
 
 ```
 - 비동기 코드가 마치 동기 코드인 것 처럼 작성할 수 있다.
@@ -620,11 +620,11 @@ associated value는 동일한 case 내에서 다른 값을 가질 수 있다.
 </details>
 
 <details>
-  <summary> loadView()와 viewDidLoad()의 차이는? </summary>
+  <summary> 'loadView()'와 'viewDidLoad()'의 차이는? </summary>
   
   > loadView()
 
-  뷰 컨트롤러가 자신의 메인 뷰 (self.view)를 로드할 때 호출되는 메서드이다.
+  뷰 컨트롤러가 자신의 메인 뷰 (`self.view`)를 로드할 때 호출되는 메서드이다.
 
   즉, 그 메인 뷰를 생성하려고 호출하는 메서드 인것. 그래서 이 메서드 안에서 새로운 뷰를 만들어서 반환해줘도 된다. 
   ```
@@ -650,7 +650,7 @@ associated value는 동일한 case 내에서 다른 값을 가질 수 있다.
 </details>
 
 <details>
-  <summary> DispatchQueue 사용 시 주의 사항은? </summary>
+  <summary> GCD의 종류와 사용 시 주의 사항은? </summary>
 
   > GCD의 종류
 
@@ -694,7 +694,7 @@ associated value는 동일한 case 내에서 다른 값을 가질 수 있다.
       
       - 작업을 스레드에 배치하는 일은 OS가 알아서 처리한다.
       - 우선순위가 더 높은 큐의 작업을 우선적으로 더 많은 스레드에 배치한다.
-      - 큐에도 우선순위를 매길 수 있지만, 작업을 대기열에 보내는 방식도 QoS를 매길 수 있다.
+      - 큐에도 우선순위를 매길 수 있지만, 작업을 대기열에 보내는 방식도 `QoS`를 매길 수 있다.
 
   > serial queue 상황
 
