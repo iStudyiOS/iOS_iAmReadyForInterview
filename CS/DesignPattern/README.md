@@ -116,7 +116,8 @@
     }
 
     let selectedCar = SelectedCar(car: BMW())
-    let selectedCar2 = SelectedCar(car: HYUNDAI())```
+    let selectedCar2 = SelectedCar(car: HYUNDAI())
+    ```
 
 </details>
 
