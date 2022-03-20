@@ -77,7 +77,7 @@
   - Unit Test가 용이, 코드의 재활용성 증대
   - 의존성(종속성)을 줄이고, 결합을 낮추면서 유연한 코드 작성이 가능
 
-  ```swift
+    ```swift
     @objc protocol Driving {
         func startDriving()
         func stopDriving()
