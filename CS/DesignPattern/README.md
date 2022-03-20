@@ -36,8 +36,8 @@
         }
     }
 
-    /* todayEat변수는 추상적인 객체인 Menu타입에 의존
-    여기서 changeMenu함수를 활용해서 의존성 주입 */
+    /* todayEat 변수는 추상적인 객체인 Menu타입에 의존
+    여기서 changeMenu 함수를 활용해서 의존성 주입 */
     struct Person {
         var todayEat: Menu
 
