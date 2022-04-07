@@ -37,7 +37,7 @@
 <details>
   <summary> 컬렉션 타입의 종류와 특징에 대해 설명해주세요 </summary>
   <p>
-      
+
   - 이름처럼 ‘데이터들의 집합'으로, swift에서는 ‘지정된 타입의 데이터들의 묶음’을 말한다.
     지정된(데이터) 타입이라고 하는 이유는 swift의 컬렉션 타입이 모두 Generic Collection으로 구현되어 있기 때문이다.
 
@@ -48,7 +48,7 @@
 
   > 컬렉션은 생성한 이후 수정할 필요가 없다면, 상수에 할당하는 것이 바람직하다. “앞으로 이 컬렉션은 수정하면 안 된다.”라는 의도를 코드에 명시하므로 다른 개발자가 코드를 이해하기 쉽다.
   또한 컴파일러의 성능 최적화(performance optimization)를 가능하게 한다.
-  > 
+  >
 
   ### Array
 
@@ -83,7 +83,7 @@
   ### Dictionary
 
   - 순서 없이 key 와 value가 한 쌍으로 데이터를 저장하는 컬렉션 타입이다.
-  - key와 value에 대한 타입을 지정해놓으면 해당 타입만 입력할 수 있다. 
+  - key와 value에 대한 타입을 지정해놓으면 해당 타입만 입력할 수 있다.
   (모든 key의 타입 동일, 모든 value의 타입 동일)
   - 마찬가지로 순서가 없다.
   - key의 타입은 꼭 Hashable 프로토콜을 채택하고 있어야 한다.
@@ -140,7 +140,7 @@
       - 변수에 값이 있을지 없을지 모르는 상황에서 Optional을 우리는 사용해야 하지만 그 값을 안전하게 추출하기 위해서 사용하는 방법이 Optional Binding이다.
       - Optional Binding에는 `if let`, `guard let` 두 가지가 있다.
       <br>
-      
+
       **[ if let ]**
       ```swift
       // if let
@@ -156,7 +156,7 @@
       - `Optional`값을 새로운 상수로 받고, if문의 괄호 안에서는 `non-optional`값을 사용한다.
       - 새로 선언된 상수는 `non-optional` 값이기 때문에 `!` 키워드를 사용할 필요가 없다.
       <br>
-      
+
       **[ guard let ]**
       ```swift
       // guard let
@@ -181,19 +181,19 @@
       - 예외 사항만 처리하고 싶을 때 좋다. ← [예외처리의 예시](https://dev200ok.blogspot.com/2020/03/swift-guard-let-if-let_24.html)
       - 함수 전체에서 optional로 추출된 상수나 함수를 사용할 수 있다.
       <br>
-      
+
       **[ guard문 사용시 주의 사항 ]**
       - 제어문 전환 명령어를 쓸 수 없는 상황이라면 사용이 불가능하다.
       - 함수, 메서드, 반복문 등 특정 블록 내부에 위치하지 않는다면 사용이 제한된다.
       <br>
-      
+
       **[ if let의 특징 ]**
       - 성공과 실패 2가지로 나누어서 원하는 작업이 가능하다.
       - 지역 변수로만 사용이 가능하다.
       - else문을 생략할 수 있다.
       - 옵셔널 바인딩된 상수는 그 블록 안에서만 변수 사용이 가능하다.
       <br>
-      
+
       **[[ 언제 사용하면 좋을까? ]](https://www.hackingwithswift.com/quick-start/understanding-swift/when-to-use-guard-let-rather-than-if-let)**
       - guard : 예외 사항만 처리하고자할 때 사용하면 좋다.
       - if let : 조건을 가지고 나누어 처리할 때 사용하면 좋다.
@@ -228,7 +228,7 @@
 <details>
   <summary> 클래스와 구조체는 언제 사용하면 좋을까요? </summary>
   <br>
-  
+
   ## [ 클래스 < 구조체 ]
   ```
   - 구조체는 값타입으로 불변성을 유지하기 때문에 여러 스레드들이 한 인스턴스를 사용하는 다중 스레드 환경에서도 안전하게 사용될 수 있다.
@@ -236,10 +236,10 @@
   - `Heap`에 저장되는 클래스는 `Heap`에 인스턴스를 저장하고, 그 참조값을 `Stack`에 저장한다.
   ```
   <br>
-  
+
   ## [ 클래스 > 구조체 ]
   ```
-  - 구조체는 값타입이기 때문에 값이 같은 인스턴스가 매번 복사되어 사용되는데, 
+  - 구조체는 값타입이기 때문에 값이 같은 인스턴스가 매번 복사되어 사용되는데,
     만약 어떤 인스턴스의 참조값의 고유성을 유지하고 싶다면 클래스를 사용한다.
   ```
 </details>
@@ -247,50 +247,50 @@
 <details>
   <summary> 타입 캐스팅을 할 떄 사용하는 as, as?, as!의 차이첨은 무엇일까요? </summary>
   <br>
-  
+
   ## 타입 캐스팅(Type Casting) 이란?
   > 인스턴스의 타입을 확인하거나 클래스 계층의 다른 부모 클래스/자식 클래스로 취급하는 방법이다.
-  
+
   ## 다운 캐스팅
   > 부모 클래스 -> 자식 클래스로 형변환 / 자식 클래스의 프로퍼티와 메서드를 사용하기 위한 방법이다.
   - `as?` (옵셔널 캐스팅) : 변환이 성공하면 옵셔널 값을 가지며, 실패시에는 nil을 반환한다.
   - `as!` (강제 캐스팅) : 변환이 성공하면 언래핑된 값을 가지며, 실패시 런타임 에러가 발생한다.
-  
+
   ## 업 캐스팅
   > 자식 클래스 -> 부모 클래스로 형변환 / 부모 클래스의 프로퍼티와 메서드를 사용하기 위한 방법이다.
   - `as` : 타입 변환이 확실하게 가능한 경우에만 사용한다. (그 외에는 컴파일 에러 발생)
-  
+
 </details>
 
 <details>
   <summary> 열거형도 Hashable을 채택했을 때 자동으로 Hashable하게 만들 수 있나요? </summary>
   <br>
-  
+
   - 열거형은 `associated value`가 없는 경우에는 `Hashable` 프로토콜만 채택해도 `Hashable`하게 사용할 수 있다.
   - 하지만 `associated valu`e가 있는 경우에는 `Hash 메서드`를 구현해주어야 한다.
-  
+
 </details>
 
 <details>
 <summary> cow란 무엇인가요? </summary>
 <div markdown="1">
 <br>
-  
+
   ### Copy on Write
   > 컴퓨터 프로그래밍에서 복사 동작을 할 때, 실제 원본이나 복사본이 수정되기 전까지는 복사를 하지 않고 원본 리소스를 공유함 원본이나 복사본에서 수정이 일어날 경우, 그때 복사하는 작업을 함
 
   ### 작동 방식
   대표적으로 Swift에서 Array는 Value 타입이기 때문에, 값 복사가 일어나게 된다. 하지만, cow 때문에 처음에는 같은 메모리를 참조하고 있다가 어느 하나가 수정이 일어나게 되면 복사가 진행된다.
-  
+
   ### 사용하는 이유
   일단 복사를 한다고 해서 꼭 수정이 일어나는 것은 아니다. 따라서, 불필요한 메모리 비용을 줄이기 위해 사용된다.
 
 <summary>Enum 과 Struct 는 어떤 차이가 있는지?</summary>
 <div markdown="1">
 <br>
-    - Enum 타입은 열거형 타입으로 연관된 값들의 집합이다. case 하나하나가 하나의 값을 나타내는 타입. 
+    - Enum 타입은 열거형 타입으로 연관된 값들의 집합이다. case 하나하나가 하나의 값을 나타내는 타입.
     - Struct는 프로퍼티와 메서드로 구성된 타입. enum, struct 모두 class와 다르게 값타입이며, 상속이 불가능하지만 프로토콜 채택은 가능함.
-  
+
 </div>
 </details>
 
@@ -298,36 +298,36 @@
 <summary>Int / Int32 / Int64  | UInt / UInt32 / UInt64 각각의 차이는 무엇인지?</summary>
 <div markdown="1">
 <br>
-    - 모두 정수를 나타내는 데이터 타입. 뒤에 붙는 32,64는 타입이 표현할 수 있는 비트의 크기. 
-    - Int는 음수와 0, 양수를 표현할 수 있고, UInt는 양수만 표현할 수 있음. 
-    - 크기가 표시되지 않은 Int, UInt는 해당 프로그램이 컴파일되는 컴퓨터의 시스템 아키텍처를 따른다. 즉, 자신이 사용하는 컴퓨터가 32비트 일 경우, Int의 범위는 -2^16 ~ 2^16 - 1 이고 64비트일 경우 -2^32 ~ 2^32 - 1 이다. 
+    - 모두 정수를 나타내는 데이터 타입. 뒤에 붙는 32,64는 타입이 표현할 수 있는 비트의 크기.
+    - Int는 음수와 0, 양수를 표현할 수 있고, UInt는 양수만 표현할 수 있음.
+    - 크기가 표시되지 않은 Int, UInt는 해당 프로그램이 컴파일되는 컴퓨터의 시스템 아키텍처를 따른다. 즉, 자신이 사용하는 컴퓨터가 32비트 일 경우, Int의 범위는 -2^16 ~ 2^16 - 1 이고 64비트일 경우 -2^32 ~ 2^32 - 1 이다.
     -UInt의 범위가 필요하지 않는 한 Int 사용 권장. 두 타입을 모두 사용하면 서로 다른 타입의 값을 교환할때 자원소모 크기 때문.
- 
+
 </div>
 </details>
 
 <details>
   <summary> closure를 이용한 stored property와 computed property의 차이점 </summary>
   <br>
-  
+
   - Closure를 이용하여 프로퍼티를 세팅하게 되면 해당 프로퍼티가 처음 호출이 될 때 클로저 안의 코드가 수행되어 프로퍼티의 값이 정해지고, 정해지고 난 후에는 그 값이 계속 쓰인다.
   - Computed property는 해당 변수가 호출이 될 때마다 computed property의 block이 실행되어 값을 반환한다.
-  
+
 <summary>Any 와 AnyObject는 어떤것인지?</summary>
 <div markdown="1">
 <br>
-    - Any는 함수타입을 포함하여 Swift의 모든 데이터 타입을 지칭하는 타입. Int, String 같은 기본 데이터 타입까지 포함. 
+    - Any는 함수타입을 포함하여 Swift의 모든 데이터 타입을 지칭하는 타입. Int, String 같은 기본 데이터 타입까지 포함.
     - AnyObject는 모든 클래스 타입의 인스턴스를 나타내는 프로토콜임 (범위 : Any > AnyObject).
-  
+
 </div>
 </details>
-  
-  
+
+
 <details>
   <summary> Enumeration에 대해 설명해주세요 </summary>
 
 ## 열거형이란
-> An enumeration defines a common type for a group of related values   
+> An enumeration defines a common type for a group of related values
 > and enables you to work with those values in a type-safe way within your code.
 
 : 관련된 값으로 이루어진 그룹을 공통 타입으로 선언하여 `type-safety`를 보장하여 코드를 작성할 수 있게 해준다.
@@ -418,17 +418,17 @@ let myNumber = Number(rawValue: 2) // two
 - `rawValue`는 개별 `case`와 대응대는 값으로 다른 `case`와의 구분되는 유일한 값이다.
 - `associated value`는 특정한 `case`와 연결되는 타입이다.
 ```
-즉,   
-rawValue의 경우 값이 다르면 다른 case에 해당하지만, 
+즉,
+rawValue의 경우 값이 다르면 다른 case에 해당하지만,
 associated value는 동일한 case 내에서 다른 값을 가질 수 있다.
 ```
-  
+
 </details>
 
 <details>
   <summary> AppDelegate, SceneDelegate가 각각 어떠한 라이프 사이클을 처리하는지 </summary>
   <br>
-  
+
   - AppDelegate.  앱 실행 및 종료와 관련된 프로세스 라이프 사이클
   - SceneDelegate.  포그라운드와 백그라운드 상태에 있을 때 상태 전환과 관련된 UI 라이프 사이클
 
@@ -437,9 +437,9 @@ associated value는 동일한 case 내에서 다른 값을 가질 수 있다.
 <details>
   <summary> 앱의 생명 주기 </summary>
   <br>
-  
+
 > 앱 실행 순서
-> 
+>
 
 1. `application(_:didFinishLaunchingWithOptions:)`
     - 앱이 실행되면 앱을 화면에 보여주기 위한 모든 설정이 끝나고, 실제로 화면에 나타나기 직전에 호출
@@ -448,7 +448,7 @@ associated value는 동일한 case 내에서 다른 값을 가질 수 있다.
     - `application(_:configurationForConnecting:options:)`
         - 새로운 Scene을 만들고 UIKit과 연결하기 위한 configuration을 지정
         - 일반적으로 info.plist에 추가된 기본 값을 사용해서 생성
-    
+
     - `scene(_:willConnectTo:options:)`
         - Scene이 연결된 것임을 delegate에 알려줌
         - `application(_:didFinishLaunchingWithOptions:)`에서 했던 UIWindow 생성 작업
@@ -471,68 +471,68 @@ associated value는 동일한 case 내에서 다른 값을 가질 수 있다.
             - Background → Inactive
         - `sceneDidBecomeActive(_:)`
             - Inactive → Active
-  
+
 </details>
-  
+
 <details>
   <summary> [동기(Sync)와 비동기(Async)], [직렬(Serial)과 동시(Concurrent)]의 차이점 </summary>
   <br>
-  
+
     - 동기(Sync)와 비동기(Async)는 메인 쓰레드에서 대기열을 어떤 방식으로 처리할지 정하는 것.
     - 직렬(Serial)과 동시(Concurrent)는 어떤 대기열을 사용할 지 정하는 것
-  
+
 </details>
-  
+
 <details>
   <summary> 비동기 작업을 취소하는 방법 </summary>
   <br>
-  
+
     - cancel 메서드를 통해 취소가 가능하다.
-  
+
 </details>
-  
+
 <details>
   <summary> Application States </summary>
   <br>
-  
+
 1. Not Running
   - 아예 실행되지 않았거나 앱이 종료된 상태
 
 2. Inactive
   - 실행중이지만 이벤트를 받지 않는 상태. 예) 알림창 등을 가려진 상태, 잠금 상태
-  
+
 3. Active
   - 실행중이고 이벤트를 받는 상태
   - Active 상태로 들어오려면 Inactive 상태로부터 들어와야 한다
-  
+
 4. Background
   - Background에 있고, 코드를 실행중인 상태
 
 5. Suspended
   - Background에 있지만, 코드를 수행하고 있지 않은 상태
   - 메모리에는 적재되어 있지만 메모리가 부족한 상황일 때는 앱을 죽이기도 한다.
-  
+
 </details>
-  
+
 <details>
   <summary> race condition을 피할 수 있는 방법 </summary>
   <br>
-  
+
 1. NSLock
-  - Critical Section 전후로 NSLock의 lock, unlock 함수르 통해 쓰레드의 접근을 통제할 수 있다. 
+  - Critical Section 전후로 NSLock의 lock, unlock 함수르 통해 쓰레드의 접근을 통제할 수 있다.
   - 하지만, Deadlock을 유발할 수 있기 때문에 신중히 써야한다.
-  
+
 2. DispatcheSemaphore
   - Couting Semaphore의 구현체
   - 생성자로 넘겨주는 파라미터를 통해 초기 카운트 값을 정할 수 있다
   - wait와 signal 함수로 접근을 통제할 수 있다
   - wait를 통해 카운팅 1 감소, signal을 통해 카운팅 1 증가
   - wait를 호출했을 때 카운팅이 0이었다면, signal 함수가 불릴때까지 대기한다
-  
+
 3. Dispatch Barrier
   - Concurrent Queue에서 사용가능하다
   - .barrier flag를 설정한 코드 블럭은 큐에서 실행되는 유일한 작업임을 표시한다
-  
+
 4. Serial Queue
   - Serial Queue로 critical section을 wrapping을 해준다
   - Serial Queue를 통해 해당 코드가 하나의 쓰레드만 실행하도록 보장해준다
@@ -545,68 +545,68 @@ associated value는 동일한 case 내에서 다른 값을 가질 수 있다.
 그렇게 되면...
 
 - 가독성이 떨어지고
-    
+
     ```swift
     // deeply-nested closures
-    func processImageData1(completionBlock: (_ result: Image) -> Void) { 
-    	loadWebResource("dataprofile.txt") { 
-    		dataResource in loadWebResource("imagedata.dat") { 
-    			imageResource in decodeImage(dataResource, imageResource) { 
-    				imageTmp in dewarpAndCleanupImage(imageTmp) { 
-    					imageResult in completionBlock(imageResult) 
-    				} 
-    			} 
+    func processImageData1(completionBlock: (_ result: Image) -> Void) {
+    	loadWebResource("dataprofile.txt") {
+    		dataResource in loadWebResource("imagedata.dat") {
+    			imageResource in decodeImage(dataResource, imageResource) {
+    				imageTmp in dewarpAndCleanupImage(imageTmp) {
+    					imageResult in completionBlock(imageResult)
+    				}
+    			}
     		}
-    	 } 
-    } 
-    
-    processImageData1 { image in 
-    	display(image) 
+    	 }
+    }
+
+    processImageData1 { image in
+    	display(image)
     }
     ```
-    
+
 - 콜백은 오류처리를 어렵고 장황하게 만든다.
-    
+
     ```swift
-    // Using a `switch` statement for each callback: 
-    func processImageData2c(completionBlock: (Result<Image, Error>) -> Void) { 
-    	loadWebResource("dataprofile.txt") { 
-    		dataResourceResult in 
-    			switch dataResourceResult { 
-    			case .success(let dataResource): 
-    				loadWebResource("imagedata.dat") { imageResourceResult in 
-    					switch imageResourceResult { 
-    					case .success(let imageResource): 
-    						decodeImage(dataResource, imageResource) { imageTmpResult in 
-    							switch imageTmpResult { 
-    							case .success(let imageTmp): 
-    								dewarpAndCleanupImage(imageTmp) { imageResult in 
-    									completionBlock(imageResult) 
-    								} 
-    							case .failure(let error): 
-    								completionBlock(.failure(error)) 
+    // Using a `switch` statement for each callback:
+    func processImageData2c(completionBlock: (Result<Image, Error>) -> Void) {
+    	loadWebResource("dataprofile.txt") {
+    		dataResourceResult in
+    			switch dataResourceResult {
+    			case .success(let dataResource):
+    				loadWebResource("imagedata.dat") { imageResourceResult in
+    					switch imageResourceResult {
+    					case .success(let imageResource):
+    						decodeImage(dataResource, imageResource) { imageTmpResult in
+    							switch imageTmpResult {
+    							case .success(let imageTmp):
+    								dewarpAndCleanupImage(imageTmp) { imageResult in
+    									completionBlock(imageResult)
+    								}
+    							case .failure(let error):
+    								completionBlock(.failure(error))
     							}
-    						} 
-    					case .failure(let error): 
-    						completionBlock(.failure(error)) 
-    					} 
+    						}
+    					case .failure(let error):
+    						completionBlock(.failure(error))
+    					}
     			}
-    		case .failure(let error): 
-    			completionBlock(.failure(error)) 
-    		} 	
-    	} 
+    		case .failure(let error):
+    			completionBlock(.failure(error))
+    		}
+    	}
     }
-    
-    processImageData2c { result in 
-    	switch result { 
-    		case .success(let image): 
-    			display(image) 
-    		case .failure(let error): 
+
+    processImageData2c { result in
+    	switch result {
+    		case .success(let image):
+    			display(image)
+    		case .failure(let error):
     			display("No image today", error)
     	}
     }
     ```
-    
+
 
 위의 문제를 해결하기 위해 `async-await proposal`은 swift의 `coroutine` 모델을 도입했다.
 
@@ -621,12 +621,12 @@ associated value는 동일한 case 내에서 다른 값을 가질 수 있다.
 
 <details>
   <summary> 'loadView()'와 'viewDidLoad()'의 차이는? </summary>
-  
+
   > loadView()
 
   뷰 컨트롤러가 자신의 메인 뷰 (`self.view`)를 로드할 때 호출되는 메서드이다.
 
-  즉, 그 메인 뷰를 생성하려고 호출하는 메서드 인것. 그래서 이 메서드 안에서 새로운 뷰를 만들어서 반환해줘도 된다. 
+  즉, 그 메인 뷰를 생성하려고 호출하는 메서드 인것. 그래서 이 메서드 안에서 새로운 뷰를 만들어서 반환해줘도 된다.
   ```
   스토리보드를 사용하는 경우, 스토리보드에 있는 뷰를 가져와 사용할 테니 굳이 사용할 필요가 없다.)
   ```
@@ -671,27 +671,27 @@ associated value는 동일한 case 내에서 다른 값을 가질 수 있다.
       - `Quality of Service` 의 약자
           - 중요도 순으로 처리를 하겠다는 뜻이다.
           - 종류로는 userInteractive, userInitiated, default, utility, background, unspecified 가 있다.
-      
+
       ```swift
       // 유저와 직접 인터렉티브 : UI관련 (즉시)
       DispatchQueue.global(qos: .userInteractive)
-      
+
       // 반드시 필요, 비동기 처리 : 앱 내에서 첨부파일을 열기, 내부 데이터베이스 조회 등 (몇초)
-      DispatchQueue.global(qos: .userInitiated)	
-      
+      DispatchQueue.global(qos: .userInitiated)
+
       // 일반적인 작업
-      DispatchQueue.global()	
-      
+      DispatchQueue.global()
+
       // ProgressIndicator와 함께 길게 사용되는 작업 : 지속적인 데이터 feed, Networking (몇초~몇분)
-      DispatchQueue.global(qos: .utility)	
-      
+      DispatchQueue.global(qos: .utility)
+
       // 사용자가 직접적으로 인지하지 않는 부분 : 데이터베이스 유지 등 (속도보다는 에너지 효율성 중시)
       DispatchQueue.global(qos: .background)
-      
+
       // 사용하지 않음 legacy API
       DispatchQueue.global(qos: .unspecified)
       ```
-      
+
       - 작업을 스레드에 배치하는 일은 OS가 알아서 처리한다.
       - 우선순위가 더 높은 큐의 작업을 우선적으로 더 많은 스레드에 배치한다.
       - 큐에도 우선순위를 매길 수 있지만, 작업을 대기열에 보내는 방식도 `QoS`를 매길 수 있다.
@@ -708,7 +708,7 @@ associated value는 동일한 case 내에서 다른 값을 가질 수 있다.
           // 외부 블록이 완료되기 전에 내부 블록이 시작되지 않는 상태
           // 외부 블록은 내부 블록이 완료되기를 기다리는 상태
       }
-      
+
       // 영원히 실행되지 않는 부분
   }
   ```
@@ -728,33 +728,33 @@ associated value는 동일한 case 내에서 다른 값을 가질 수 있다.
       - backgroun thread와 main thread에서 이루어져야할 작업들을 순서에 맞게 사용해야 한다.
       - brackground threa 내에서 사용하는 것이 아니라면 Dispatchqueue.main.sync 사용을 지양하자!
 </details>
-  
+
 <details>
   <summary> Swift의 메모리 관리 기법인 ARC와 java의 가비지 컬렉션의 차이점 </summary>
-  
-  가장 큰 차이점은 ARC는 컴파일 타임에, 가비지 컬렉션은 런타임에 참조 계산이 수행된다는 점입니다.   
-     
-  ARC는 컴파일 당시 해제 시점을 결정하기 때문에 프로그램이 실행되기 전에, 인스턴스가 언제 메모리에서 해제될 지 알 수 있고, 때문에 메모리 관리를 위한 추가적인 자원을 사용할 필요가 없음. 반면 가비지 컬렉션은 언제 해제될지 예측하기 어렵고, 프로그램이 동작하는 동안 메모리 감시를 위한 추가 자원이 필요함 이로인해 성능저하가 발생할 수도 있음.    
-     
-  **ARC**는 작동 규칙이 있기 때문에 이를 모르고 사용하면 인스턴스가 메모리에서 영원히 해제되지 않는 문제가 발생할 수 있고, 반면 **가비지 컬렉션**은 특별히 프로그래머가 규칙에 신경쓸 필요는 없으며, 상호 참조 등의 복잡한 상황에서도 인스턴스를 해제할 수 있는 가능성이 큼. 
+
+  가장 큰 차이점은 ARC는 컴파일 타임에, 가비지 컬렉션은 런타임에 참조 계산이 수행된다는 점입니다.
+
+  ARC는 컴파일 당시 해제 시점을 결정하기 때문에 프로그램이 실행되기 전에, 인스턴스가 언제 메모리에서 해제될 지 알 수 있고, 때문에 메모리 관리를 위한 추가적인 자원을 사용할 필요가 없음. 반면 가비지 컬렉션은 언제 해제될지 예측하기 어렵고, 프로그램이 동작하는 동안 메모리 감시를 위한 추가 자원이 필요함 이로인해 성능저하가 발생할 수도 있음.
+
+  **ARC**는 작동 규칙이 있기 때문에 이를 모르고 사용하면 인스턴스가 메모리에서 영원히 해제되지 않는 문제가 발생할 수 있고, 반면 **가비지 컬렉션**은 특별히 프로그래머가 규칙에 신경쓸 필요는 없으며, 상호 참조 등의 복잡한 상황에서도 인스턴스를 해제할 수 있는 가능성이 큼.
 
 </details>
-  
+
 <details>
   <summary> 강한참조란 무엇이고, 강한참조 순환문제는 무엇인지 </summary>
 
   ### 강한참조
 
-  해당 인스턴스의 참조 횟수를 1증가 시키는 참조 = 강한 참조  
+  해당 인스턴스의 참조 횟수를 1증가 시키는 참조 = 강한 참조
 
-  인스턴스를 변수나 상수 혹은 다른 인스턴스의 프로퍼티에 할당할 때. 
+  인스턴스를 변수나 상수 혹은 다른 인스턴스의 프로퍼티에 할당할 때.
 
   인스턴스가 메모리에 남아있어야할 명분을 줌. 다시 변수나 상수에 nil을 할당하면 참조 횟수 -1
 
   ### 강한참조 순환 문제
-  
+
   인스턴스 끼리 서로가 서로를 강한참조할 때 (A의 프로퍼티 a = B, B의 프로퍼티 b = A 인 상황) → A가 nil이 되고, B가 nil이 되어도 프로퍼티에 인스턴스를 할당할 때 참조 횟수가 1 증가했기 때문에 여전히 1이어서 메모리에 남아있음 → 영원히 사라지지 않음
-    
+
   이럴 때는 프로퍼티를 각각 nil을 할당하고, 인스턴스를 nil에 할당해야함.
 </details>
 
@@ -766,8 +766,8 @@ associated value는 동일한 case 내에서 다른 값을 가질 수 있다.
 편의를 위해 참조카운트(Reference Count)를 RC로 축약하여 작성하였습니다.
 ```
 
-  - Swift는 ARC를 통해 메모리 관리가 이루어진다.   
-  ARC는 `강한 참조 순환`이 발생할 위험이 있기에, 이런 경우 개발자가 명시적으로 직접 관리해주어야 한다.  
+  - Swift는 ARC를 통해 메모리 관리가 이루어진다.
+  ARC는 `강한 참조 순환`이 발생할 위험이 있기에, 이런 경우 개발자가 명시적으로 직접 관리해주어야 한다.
   (* 강한 참조 순환은 위의 `강한참조란 무엇이고, 강한참조 순환문제는 무엇인지` 질문 참조)
 
   ## Strong
@@ -783,38 +783,38 @@ associated value는 동일한 case 내에서 다른 값을 가질 수 있다.
 - `Weak`과 거의 유사하다. 마찬가지로 RC를 증가시키지 않는다.
 - 다른점은 Optional 타입이 아니라는 것이다.
   - 메모리 해제 시 자동으로 nil값을 가질 수 없다.
-  - 때문에 nil이 아님을 보장할 수 있는 경우에만 사용해야 한다.  
+  - 때문에 nil이 아님을 보장할 수 있는 경우에만 사용해야 한다.
 (애플에 따르면, 참조 코드가 동시에 메모리에서 해제되는 경우 사용하기 좋다고 함.)
 
 </details>
-  
-  
+
+
 <details>
 <summary> 객체지향, 함수형 프로그래밍 정의 </summary>
 <div markdown="1">
 <br>
 
     함수형 프로그래밍
-    
+
     - 함수형 프로그램밍은 순수 함수를 기반으로 하는 프로그래밍 패러다임
         - 순수 함수는 어떤 입력에 대해 항상 같은 출력을 만드는 함수를 의미하며 즉, 외부에 영향을 주거나 받는 사이드 이펙트가 없다.
     - 스위프트는 함수형 프로그래밍 언어이면서 동시에 객체 지향 프로그램밍 언어의 특징인 상속, 은닉, 캡슈화, 추상화 등을 제공하는 멀티 패터다임 언어입니다.
-    
+
 <br>
-  
+
     객체지향 프로그래밍
-    
+
     - 컴퓨터 프로그램을 명령어의 목록으로 보는 기존의 명령형 프로그래밍 패러다임의 시각에서 벗어나 여러 개의 독립된 단위의 객체의 모임으로 파악하고자 하는 시작
     - 각각의 객체는 서로 메시지를 주고 받고, 데이터를 처리할 수 있다.
     - 개발과 유지보수를 간편하게, 직관적으로 코드 분석
     - 객체지향 프로그래밍 패러다임을 차용한 언어는 필수로 명령형 프로그래밍 패러다임을 사용
         - 프로퍼티, 변수 등에 해당하는 메모리값의 변화 (상태변화)가 있기 때문
-  
+
 <br>
 </div>
-</details> 
-  
-  
+</details>
+
+
 <details>
 <summary> 1급 객체에 대해 (Swift에는 어떤 1급 객체가 있는지) </summary>
 <div markdown="1">
@@ -823,12 +823,12 @@ associated value는 동일한 case 내에서 다른 값을 가질 수 있다.
   - 1급 객체는 `함수의 인자로 전달되거나 반환 값으로 사용할 수 있는` 객체를 의미합니다.
   - `변수나 상수에 할당` 할 수 있는 객체입니다.
   - 스위프트는 기본 타입들과 함수나 클로저까지 모두 1급 객체에 해당합니다.
-  
+
 <br>
 </div>
 </details>
-  
-  
+
+
 <details>
 <summary> Auto Closure </summary>
 <div markdown="1">
@@ -841,8 +841,8 @@ associated value는 동일한 case 내에서 다른 값을 가질 수 있다.
   - 주된 목적은 코드의 실행을 지연시키기 위함
       - 클로저를 인자로 넘기는 것으로도 지연 실행을 만족시킬 수 있지만, Auto Closure를 사용하면 호출하는 측 코드의 가독성이 좋아진다.
   - 자동 클로저를 함수의 인자 값으로 넣을 때는 매개변수 타입 앞에 @autoclosure 키워드 사용
-  
-  ```swift
+
+```swift
 var inline = ["A", "B", "C"]
 print(inline.count) // 3
 
@@ -852,15 +852,40 @@ print(inline.count) // 3
 print(provider) // provider 클로저 실행
 print(inline.count) // 2
 ```
-  
+
 <br>
 </div>
-</details>  
-  
-  
-  
-  
-  
-  
-  
-  
+</details>
+
+<details>
+<summary> 프로토콜 지향 언어로서 Swift </summary>
+<div markdown="1">
+<br>
+
+- 객체지향 프로그램 패러다임에 기반을 둔 언어들은 클래스의 상속을 통하여 공통 기능을 모듈화
+- 스위프트의 경우 표준 라이브러리가 대부분 `구조체`로 구성 - 상속을 지양, 상속의 경우 규모가 커질 경우 관리의 어려움
+- 어떻게 상속이 되지 않는 구조체 기반에서 공통, 다양한 기능 구현?
+  - `프로토콜`, `익스텐션`
+- 의존성 주입, 의존성 분리(프로토콜)을 구성하기 유리
+  - 오직 프로토콜이 요구하는 변수와 함수 즉 각각은 독립적, 이를 통해 공통의 프로토콜을 따름
+
+
+<br>
+</div>
+</details>
+
+<details>
+<summary> 표준 라이브러리 내 대표적인 고차함수의 사용 </summary>
+<div markdown="1">
+<br>
+
+- map: 배열 각 요소에 대한 값을 변경하고자 할때 사용하고, 그 결과들을 배열의 상태로 반환
+- filter: 배열의 원하는 조건의 요소를 다시 배열로 반환
+- reduce: 배열의 요소를 누산하여 값을 반환
+- compactMap: 1차원 배열을 nil을 제거, 옵셔널 바인딩(해제)
+- flatMap: 2차원 배열을 1차원 배열로 flatten하게 만들 때
+
+<br>
+</div>
+</details>
+
